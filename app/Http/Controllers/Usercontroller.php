@@ -5,12 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
+use Illuminate\Support\Facades\Hash;
+
 class Usercontroller extends Controller
 {
     public function create(){
         return view('create user');
     }
     public function store(Request $request){
+
+
+        $request->validate(
+            [
+                'name'=>'required|regex:/^[A-Z]+$/i',
+                'age'=>'required|numeric',
+                'contact'=>'required|numeric',
+                'email'=>'required',
+                'password'=>'required'
+            ]);
+
         $name = $request->input('name');
         $age = $request->input('age');
         $contact = $request->input('contact');
@@ -31,6 +44,7 @@ class Usercontroller extends Controller
 
     }
     public function list(){
+
         $users = User::all();
         return view('list',['users'=>$users]);
     }

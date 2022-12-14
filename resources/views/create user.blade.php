@@ -39,7 +39,7 @@
                                 <label for="" class="col-md-4 col-form-label text-md-end">Age</label>
 
                                 <div class="col-md-6">
-                                    <input  type="text" class="form-control" name="age" required>
+                                    <input  type="number" class="form-control" name="age" required>
 
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <label for="" class="col-md-4 col-form-label text-md-end">Contact</label>
 
                                 <div class="col-md-6">
-                                    <input  type="text" class="form-control" name="contact" required>
+                                    <input  type="number" class="form-control" name="contact" required>
 
                                 </div>
                             </div>

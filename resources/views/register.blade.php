@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User</title>
+    <title>Register</title>
 
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -21,50 +21,41 @@
             <div class="col-md-5 mt-5">
                 <div class="card border border-dark">
                     <div class="card-header  ">
-                        <h3 class="text-primary">Edit  Details</h3>
+                        <h3 class="text-primary">Student Details</h3>
                     </div>
 
                     <div class="card-body ">
-                        <form method="POST" action="{{url('update/'.$user->id)}}" >
+                        <form method="POST" action="/login" >
                             @csrf
 
                             <div class="row mb-4">
-                                <label for="" class="col-md-4 col-form-label text-md-end">Name</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
 
                                 <div class="col-md-6">
-                                    <input  type="text" class="form-control" name="name" required value="{{$user->name}}">
-
-                                </div>
-                            </div><div class="row mb-4">
-                                <label for="" class="col-md-4 col-form-label text-md-end">Age</label>
-
-                                <div class="col-md-6">
-                                    <input  type="number" class="form-control" name="age" required value="{{$user->age}}">
+                                    <input id="name" type="text" class="form-control" name="name" required>
 
                                 </div>
                             </div>
-                            <div class="row mb-4">
-                                <label for="" class="col-md-4 col-form-label text-md-end">Contact</label>
-
-                                <div class="col-md-6">
-                                    <input  type="number" class="form-control" name="contact" required value="{{$user->contact}}">
-
-                                </div>
-                            </div>
-
 
                             <div class="row mb-4">
-                                <label for="" class="col-md-4 col-form-label text-md-end">Email Address</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
 
                                 <div class="col-md-6">
-                                    <input  type="email" class="form-control" name="email" required value="{{$user->email}}">
+                                    <input id="email" type="email" class="form-control" name="email" required>
                                 </div>
 
                             </div>
+                            <div class="row mb-4">
+                                <label for="" class="col-md-4 col-form-label text-md-end">Password</label>
 
+                                <div class="col-md-6">
+                                    <input  type="password" class="form-control" name="password" required>
+                                </div>
+
+                            </div>
                             <div class="row ">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Register</button>
                                 </div>
                             </div>
                         </form>

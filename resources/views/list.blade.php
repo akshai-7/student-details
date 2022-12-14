@@ -10,17 +10,17 @@
 </head>
 <style>
      body{
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Times New Roman',Times, serif;
     }
 </style>
 <body>
     <div class="d-flex justify-content-center align-items-center col-md-5 mt-5">
         <h3 class="text-primary">Student Details</h3>
     </div>
-    <div class=" d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center">
         <table class="table table-striped table-bordered col-md-5 mt-3" style="width:1000px">
             <thead>
-                <th>ID</th>
+                <th>S.No</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Contact</th>
@@ -31,15 +31,15 @@
             <tbody>
                 @foreach ($users as $users )
                 <tr>
-                <td>{{$users->id}}</td>
+
+                <td>{{$loop->iteration}}</td>
+                {{-- <td>{{$users->id}}</td> --}}
                 <td>{{$users->name}}</td>
                 <td>{{$users->age}}</td>
                 <td>{{$users->contact}}</td>
                 <td>{{$users->email}}</td>
                <td><a href="edit/{{$users->id}}"><i class="fa-solid fa-pen-to-square btn btn-success"></i></a></td>
                <td><a href="delete/{{$users->id}}"><i class="fa-solid fa-trash btn btn-danger"></i></a></td>
-
-
                 </tr>
                 @endforeach
             </tbody>
